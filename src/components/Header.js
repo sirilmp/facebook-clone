@@ -14,7 +14,7 @@ function Header() {
     const [status, setStatus] = useState('home')
 
     return (
-        <div className='dark:bg-gray-900 flex justify-between px-2 items-center h-20 w-full border-b border-gray-700'>
+        <div className='dark:bg-gray-900 flex justify-between px-2 items-center h-20 w-full border-b border-gray-700 sticky top-0'>
             <div className='flex justify-between'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <path d="M16.6667 39.7778C7.22222 38.1111 0 29.8889 0 20C0 9 9 0 20 0C31 0 40 9 40 20C40 29.8889 32.7778 38.1111 23.3333 39.7778L22.2222 38.8889H17.7778L16.6667 39.7778Z" fill="url(#paint0_linear_2:5)" />

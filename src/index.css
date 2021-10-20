@@ -16,3 +16,20 @@
       display: flex;
   }
 }
+@media (min-width: 900px) {
+  .sponsored-show {
+    display: block;
+  }
+}
+.show{
+  display: none;
+}
+.hide:hover .show{
+  display: flex;
+}
+.min-w27{
+  min-width: 25%;
+}
+.w30{
+  max-width: 27%;
+}

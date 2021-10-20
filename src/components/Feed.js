@@ -1,19 +1,27 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { TiArrowSortedDown,TiArrowSortedUp } from "react-icons/ti";
 
 function Feed() {
 
+    const screen_height = window.innerHeight - 80
 
-    const [menuData, setMenuData] = useState([])
+    const [menuDataLess, setMenuDataLess] = useState([])
+    const [menuDataMore, setMenuDataMore] = useState([])
+    const [showMore, setShowMore] = useState(false)
+
+    const showMoreLessButton=()=>{
+        setShowMore(!showMore)
+    }
 
     useEffect(() => {
         const fathUserData = () => {
             axios
                 .get("https://run.mocky.io/v3/157717b2-5a35-466b-a867-a5e1eade1206")
                 .then((res) => {
-                    console.log(res);
-                    setMenuData(res.data)
-                    console.log(menuData);
+                    setMenuDataMore(res.data)
+                    const slicedData = res.data.slice(0, 10)
+                    setMenuDataLess(slicedData)
                 })
                 .catch((err) => {
                     console.error(err);
@@ -22,17 +30,36 @@ function Feed() {
         fathUserData();
     }, []);
 
-
     return (
-        <div className='dark:bg-gray-900 w-1/3 hidden feed-show py-2 overflow-y-scroll h-screen'>
+        <div className='dark:bg-gray-900 min-w27 w30 hidden feed-show py-2 overflow-y-scroll sticky top-20' style={{ height: screen_height }}>
             {
-                menuData.map((data) => (
+                showMore ? menuDataMore.map((data) => (
+                    <div key={data.id} className='flex items-center px-2 py-1 mb-4 mx-3 dark:hover:bg-gray-700 duration-200 cursor-pointer rounded-md'>
+                        <img src={data.icon} alt={data.title} className='w-9' />
+                        <p className='text-sm font-medium dark:text-gray-100 ml-2'>{data.title}</p>
+                    </div>
+                )) : menuDataLess.map((data) => (
                     <div key={data.id} className='flex items-center px-2 py-1 mb-4 mx-3 dark:hover:bg-gray-700 duration-200 cursor-pointer rounded-md'>
                         <img src={data.icon} alt={data.title} className='w-10' />
                         <p className='text-base dark:text-gray-100 ml-2'>{data.title}</p>
                     </div>
                 ))
             }
+            <div className='px-2'>
+                {
+                    showMore ? <div onClick={showMoreLessButton} className='dark:hover:bg-gray-700 duration-200 cursor-pointer flex items-center py-2 px-2 rounded-md'>
+                        <div className='w-8 h-8 rounded-full flex justify-center items-center dark:bg-gray-800'>
+                            <TiArrowSortedUp className='dark:text-gray-400 text-xl' />
+                        </div>
+                        <p className='dark:text-gray-100 text-base ml-2'>Show Less</p>
+                    </div> : <div onClick={showMoreLessButton} className='dark:hover:bg-gray-700 duration-200 cursor-pointer flex items-center py-2 px-2 rounded-md'>
+                        <div className='w-8 h-8 rounded-full flex justify-center items-center dark:bg-gray-800'>
+                            <TiArrowSortedDown className='dark:text-gray-400 text-xl' />
+                        </div>
+                        <p className='dark:text-gray-100 text-base ml-2'>Show More</p>
+                    </div>
+                }
+            </div>
         </div>
     )
 }
