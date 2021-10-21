@@ -74,22 +74,22 @@ function Header() {
                 <p className='xl:block hidden dark:bg-gray-700 dark:text-gray-100 p-2 px-4 rounded-full font-medium text-sm dark:hover:bg-gray-600 duration-200 cursor-pointer'>Find Friends</p>
                 {/* visible at screen size more than XL */}
                 <div className='xl:flex hidden items-center justify-center ml-2 dark:text-gray-100 py-0.5 px-1 rounded-full dark:hover:bg-gray-600 duration-200 cursor-pointer'>
-                    <img src="https://www.sirilmp.online/images/profile1.png" alt="profile image" className='w-8 h-8 rounded-full' />
+                    <img src="https://www.sirilmp.online/images/profile1.png" alt="profile img" className='w-8 h-8 rounded-full' />
                     <p className='font-medium text-sm mx-1'>Siril M P</p>
                 </div>
-                <div className='add-button-show flex dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 ml-3 w-9 h-9 items-center justify-center rounded-full'>
+                <div className='add-button-show flex dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 ml-3 w-9 h-9 items-center justify-center rounded-full cursor-pointer'>
                     <AiOutlinePlus className='text-2xl dark:text-gray-100' />
                 </div>
-                <div className='dot-button-show hidden dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 ml-3 w-9 h-9 items-center justify-center rounded-full'>
+                <div className='dot-button-show hidden dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 ml-3 w-9 h-9 items-center justify-center rounded-full cursor-pointer'>
                     <CgMenuGridO className='text-2xl dark:text-gray-100' />
                 </div>
-                <div className='dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 mx-3 w-9 h-9 flex items-center justify-center rounded-full'>
+                <div className='dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 mx-3 w-9 h-9 flex items-center justify-center rounded-full cursor-pointer'>
                     <FaFacebookMessenger className='text-2xl dark:text-gray-100' />
                 </div>
-                <div className='dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 mr-3 w-9 h-9 flex items-center justify-center rounded-full'>
+                <div className='dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 mr-3 w-9 h-9 flex items-center justify-center rounded-full cursor-pointer'>
                     <FaBell className='text-xl dark:text-gray-100' />
                 </div>
-                <div className='dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 w-9 h-9 flex items-center justify-center rounded-full'>
+                <div className='dark:text-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 w-9 h-9 flex items-center justify-center rounded-full cursor-pointer'>
                     <TiArrowSortedDown className='text-xl dark:text-gray-100' />
                 </div>
             </div>

@@ -26,6 +26,7 @@
 }
 .hide:hover .show{
   display: flex;
+  transition-duration: 200ms;
 }
 .min-w27{
   min-width: 25%;

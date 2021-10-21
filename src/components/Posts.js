@@ -11,7 +11,7 @@ function Posts() {
             <div className='flex justify-between items-center'>
                 <div className='flex items-center'>
                     {/* user image */}
-                    <img src="https://www.sirilmp.online/images/profile1.png" alt="profile image" className='w-12 rounded-full' />
+                    <img src="https://www.sirilmp.online/images/profile1.png" alt="profile img" className='w-12 rounded-full' />
                     <div className='ml-3'>
                         {/* user name */}
                         <h5 className='dark:text-gray-100 font-semibold hover:underline cursor-pointer'>Arjun</h5>
